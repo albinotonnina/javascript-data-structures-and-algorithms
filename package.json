@@ -1,0 +1,22 @@
+{
+  "name": "binarysearchtree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run compile && node ./lib/index.js",
+    "compile": "babel --presets env -d lib/ src/",
+    "test": "npm run compile && jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "jest": "^21.2.1",
+    "prettier": "^1.8.2"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.6.1"
+  }
+}
