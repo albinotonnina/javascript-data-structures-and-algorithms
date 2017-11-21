@@ -1,5 +1,5 @@
 {
-  "name": "binarysearchtree",
+  "name": "javascript-problems",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,3 +20,5 @@
     "babel-preset-env": "^1.6.1"
   }
 }
+
+
