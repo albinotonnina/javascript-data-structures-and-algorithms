@@ -5,6 +5,7 @@
 * **translateRomanNumeral**: Translate Romans into numerals
 * **QueueTwoStacks**: Implement a queue with 2 stacks.
 * **GetMaxStack**: Get the largest item in a stack
+* **ResponseHandler**: Add handlers and implement fallbacks
 
 ### Install
 `npm install`
