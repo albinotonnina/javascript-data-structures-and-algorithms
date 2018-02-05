@@ -5,13 +5,14 @@
 # 🤯Javascript problems
 A bunch of common problems (interview stuff) with solutions. 
 
-Written in ES6 🔥 and tested with Jest 🔍
+Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf 
 
 
 # What to do here
 `yarn && yarn test`
 
 ## List of problems 
+* [Fizz-Buzz](src/FizzBuzz)
 * **getEvenOccurrence**: Find the first even occurrence of a number in an array
 * **getAllPermutations**: Get all the permutations of a string
 * **translateRomanNumeral**: Translate Romans into numerals
