@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run compile && node ./lib/index.js",
-    "compile": "babel -d lib/ src/",
+    "start": "jest",
+    "transpile": "babel -d lib/ src/",
     "test": "jest"
   },
   "author": "",

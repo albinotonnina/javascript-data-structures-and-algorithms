@@ -3,7 +3,15 @@
 [![Build Status](https://travis-ci.org/albinotonnina/javascript-problems.svg?branch=master)](https://travis-ci.org/albinotonnina/javascript-problems)
 
 # 🤯Javascript problems
+A bunch of common problems (interview stuff) with solutions. 
 
+Written in ES6 🔥 and tested with Jest 🔍
+
+
+# What to do here
+`yarn && yarn test`
+
+## List of problems 
 * **getEvenOccurrence**: Find the first even occurrence of a number in an array
 * **getAllPermutations**: Get all the permutations of a string
 * **translateRomanNumeral**: Translate Romans into numerals
@@ -11,14 +19,6 @@
 * **GetMaxStack**: Get the largest item in a stack
 * **ResponseHandler**: Add handlers and implement fallbacks
 
-### Install
-`npm install`
-
-### Test
-`npm run test`
-
-### Start
-`npm start`
 
 [snyk-image]: https://snyk.io/test/github/albinotonnina/javascript-problems/badge.svg
 [snyk-url]: https://snyk.io/test/github/albinotonnina/javascript-problems
