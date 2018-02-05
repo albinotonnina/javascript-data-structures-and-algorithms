@@ -5,7 +5,7 @@
 # 🤯Javascript problems
 A bunch of common problems (interview stuff) with solutions. 
 
-Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf 
+Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf measurements
 
 
 # What to do here
@@ -13,6 +13,7 @@ Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf
 
 ## List of problems 
 * [Fizz-Buzz](src/FizzBuzz)
+* [isPalindrome](src/isPalindrome)
 * **getEvenOccurrence**: Find the first even occurrence of a number in an array
 * **getAllPermutations**: Get all the permutations of a string
 * **translateRomanNumeral**: Translate Romans into numerals

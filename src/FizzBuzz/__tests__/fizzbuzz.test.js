@@ -1,17 +1,6 @@
-const { performance } = require('perf_hooks')
-var colors = require('colors')
+import { displayPerfTime } from '../../utils/perf-utils'
 
-import {fizzBuzz1, fizzBuzz2} from '../fizzbuzz'
-
-const displayPerfTime = (testName, fn) => {
-  const t0 = performance.now()
-  fn()
-  const t1 = performance.now()
-
-  const roundedTime = (t1 - t0).toFixed(4)
-
-  console.log(`⏱ 🚀 Call to ` + `${testName}`.bold.green + ` took ` + `${roundedTime}ms.`.bold.blue)
-}
+import { fizzBuzz1, fizzBuzz2 } from '../fizzbuzz'
 
 describe('Fizz-Buzz', () => {
   const vals = [
@@ -126,36 +115,31 @@ describe('Fizz-Buzz', () => {
   })
 
   describe('Performance', () => {
+    it('will display perftime, num=10', () => {
+      displayPerfTime('fizzBuzz1(10)', () => {
+        fizzBuzz1(10)
+      })
+      displayPerfTime('fizzBuzz2(10)', () => {
+        fizzBuzz2(10)
+      })
+    })
 
+    it('will display perftime, num=100', () => {
+      displayPerfTime('fizzBuzz1(100)', () => {
+        fizzBuzz1(10)
+      })
+      displayPerfTime('fizzBuzz2(100)', () => {
+        fizzBuzz2(10)
+      })
+    })
 
-it('will display perftime, num=10', () => {
-  displayPerfTime('fizzBuzz1(10)', () => {
-    fizzBuzz1(10)
-  })
-  displayPerfTime('fizzBuzz2(10)', () => {
-    fizzBuzz2(10)
-  })
-})
-
-it('will display perftime, num=100', () => {
-  displayPerfTime('fizzBuzz1(100)', () => {
-    fizzBuzz1(10)
-  })
-  displayPerfTime('fizzBuzz2(100)', () => {
-    fizzBuzz2(10)
-  })
-})
-
-it('will display perftime, num=1000', () => {
-  displayPerfTime('fizzBuzz1(1000)', () => {
-    fizzBuzz1(10)
-  })
-  displayPerfTime('fizzBuzz2(1000)', () => {
-    fizzBuzz2(10)
-  })
-})
-
-
-
+    it('will display perftime, num=1000', () => {
+      displayPerfTime('fizzBuzz1(1000)', () => {
+        fizzBuzz1(10)
+      })
+      displayPerfTime('fizzBuzz2(1000)', () => {
+        fizzBuzz2(10)
+      })
+    })
   })
 })
