@@ -14,12 +14,12 @@ Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf measurements
 ## List of problems 
 * [Fizz-Buzz](src/FizzBuzz)
 * [isPalindrome](src/isPalindrome)
-* **getEvenOccurrence**: Find the first even occurrence of a number in an array
-* **getAllPermutations**: Get all the permutations of a string
-* **translateRomanNumeral**: Translate Romans into numerals
-* **QueueTwoStacks**: Implement a queue with 2 stacks.
-* **GetMaxStack**: Get the largest item in a stack
-* **ResponseHandler**: Add handlers and implement fallbacks
+* [getEvenOccurrence](src/getEvenOccurrence): Find the first even occurrence of a number in an array
+* [getAllPermutations](src/getPermutations): Get all the permutations of a string
+* [Roman to Numerals](src/romanToNumerals): Translate Romans into numerals
+* [QueueTwoStacks](src/queueStacks): Implement a queue with 2 stacks.
+* [GetMaxStack](src/getMaxStack): Get the largest item in a stack
+* [ResponseHandler](src/responseHandler): Add handlers and implement fallbacks
 
 
 [snyk-image]: https://snyk.io/test/github/albinotonnina/javascript-problems/badge.svg

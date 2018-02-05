@@ -1,4 +1,4 @@
-import GetMaxStack from '../src/GetMaxStack'
+import GetMaxStack from '../getMaxStack'
 
 describe('Get the max stack', () => {
   it('return the largest item in the stack', () => {

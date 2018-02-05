@@ -1,4 +1,4 @@
-import QueueTwoStacks from '../src/QueueTwoStacks'
+import QueueTwoStacks from '../queueTwoStacks'
 
 describe('Queue with two stacks', () => {
   it('should be FIFO, first in first out', () => {

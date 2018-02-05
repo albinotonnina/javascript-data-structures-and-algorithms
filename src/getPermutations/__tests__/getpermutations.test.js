@@ -1,4 +1,4 @@
-import getPermutations from '../src/getpermutations'
+import getPermutations from '../getpermutations'
 
 describe('Get all permutations of a strinf', () => {
   it('should return all the permutations of a string', () => {

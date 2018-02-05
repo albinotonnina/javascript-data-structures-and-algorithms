@@ -1,4 +1,4 @@
-import getEvenOccurrence from '../src/getevenoccurrence'
+import getEvenOccurrence from '../getevenoccurrence'
 
 describe('Even occurrence', () => {
   it('should return the first even occurrence of a number', () => {

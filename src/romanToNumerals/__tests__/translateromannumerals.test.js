@@ -1,4 +1,4 @@
-import translateRomanNumerals from '../src/translateromannumerals'
+import translateRomanNumerals from '../translateromannumerals'
 
 describe('Translate Roman numbers to numerals', () => {
   it('should translate a roman number', () => {
