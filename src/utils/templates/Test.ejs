@@ -1,0 +1,16 @@
+import <%= name %> from '../'
+
+describe(<%= name %>, () => {
+  it('should behave...', () => {
+
+<% if ( kind === 'function') { %>
+    const fn = <%= name %>()
+    expect(fn).toBeTruthy()
+<% } else if (kind === 'class') { %>
+    const fn = new <%= name %>()
+    expect(fn).toBeTruthy()
+<% } %>
+
+  })
+
+})

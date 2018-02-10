@@ -6,14 +6,19 @@
   "scripts": {
     "start": "jest",
     "transpile": "babel -d lib/ src/",
-    "test": "jest"
+    "test": "jest",
+    "create-unit": "node src/utils/create-unit.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.2.0",
+    "chalk": "^2.3.0",
+    "ejs": "^2.5.7",
+    "inquirer": "^5.1.0",
     "jest": "^21.2.1",
+    "lodash": "^4.17.5",
     "prettier": "^1.8.2"
   },
   "dependencies": {

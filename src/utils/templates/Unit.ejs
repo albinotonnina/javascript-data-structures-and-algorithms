@@ -1,0 +1,15 @@
+<% if ( kind === 'function') { %>
+const <%= name %> = <%= arguments %> => {
+  
+  
+}
+<% } else if (kind === 'class') { %>
+class <%= name %> {
+  constructor<%= arguments %> {}
+
+
+}
+<% } %>
+
+
+export default <%= name %>
