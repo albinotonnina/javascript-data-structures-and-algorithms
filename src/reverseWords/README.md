@@ -1,7 +1,9 @@
-reverseWords:
+# ⚗ Reverse words
 
 Reverse the letters in every word ut don't use Array.reverse()
 
 ```
- expect(reverseWords('I like JavaScript problems')).toEqual('I ekil tpircSavaJ smelborp')
+    import reverseWords from '../'
+    
+    expect(reverseWords('I like JavaScript problems')).toEqual('I ekil tpircSavaJ smelborp')
 ```
