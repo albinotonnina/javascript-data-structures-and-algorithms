@@ -33,19 +33,19 @@ class meanMedianMode {
       return obj
     }, {})
 
-    // create array of mode/s
     let maxFrequency = 0
-    let modes = []
 
-    for (let num in modeObj) {
-      if (modeObj[num] > maxFrequency) {
-        modes = [num]
-        maxFrequency = modeObj[num]
-      } else if (modeObj[num] === maxFrequency) modes.push(num)
-    }
-    // if every value appears same amount of times
-    if (modes.length === Object.keys(modeObj).length) modes = []
-    return modes
+    return Object.keys(modeObj)
+      .reduce((acc, num) => {
+        if (modeObj[num] > maxFrequency) {
+          acc = [num]
+          maxFrequency = modeObj[num]
+        } else if (modeObj[num] === maxFrequency) {
+          acc.push(num)
+        }
+        return acc
+      }, [])
+      .filter((num, i, arr) => arr.length !== Object.keys(modeObj).length)
   }
 
   getMeanMedianMode() {
