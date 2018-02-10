@@ -15,6 +15,8 @@ Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf measurements
 * [Fizz-Buzz](src/FizzBuzz)
 * [isPalindrome](src/isPalindrome)
 * [caesarCipher](src/caesarCipher)
+* [reverseWords](src/reverseWords)
+* [reverseArrayInPlace](src/reverseArrayInPlace)
 * [getEvenOccurrence](src/getEvenOccurrence): Find the first even occurrence of a number in an array
 * [getAllPermutations](src/getPermutations): Get all the permutations of a string
 * [Roman to Numerals](src/romanToNumerals): Translate Romans into numerals
