@@ -1,14 +1,14 @@
 import <%= name %> from '../'
 
-describe(<%= name %>, () => {
+describe('<%= name %>', () => {
   it('should behave...', () => {
 
 <% if ( kind === 'function') { %>
-    const fn = <%= name %>()
-    expect(fn).toBeTruthy()
+
+    expect(<%= name %>()).toEqual('')
 <% } else if (kind === 'class') { %>
-    const fn = new <%= name %>()
-    expect(fn).toBeTruthy()
+    const  = new <%= name %>()
+    expect(fn).toEqual('')
 <% } %>
 
   })
