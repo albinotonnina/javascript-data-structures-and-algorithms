@@ -45,14 +45,14 @@ const render = (options, template, out) => {
 
   const argumentsArr = options.arguments.length > 0 ? options.arguments.split(',') : []
 
-  const arguments =
+  const args =
     argumentsArr.length > 0
       ? argumentsArr.length > 1 ? `(${options.arguments})` : options.arguments
       : '()'
 
   const extendedOptions = Object.assign({}, options, {
     name,
-    arguments
+    arguments: args
   })
   chalk.blue(extendedOptions)
   const input = path.join(templates, template)
