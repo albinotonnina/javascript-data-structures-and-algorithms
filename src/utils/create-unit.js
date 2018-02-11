@@ -100,7 +100,7 @@ inquirer
 
     render(extendedOptions, 'Unit.ejs', `index.js`)
 
-    render(extendedOptions, 'Test.ejs', `__tests__/${unitName}.test.js`)
+    render(extendedOptions, 'Test.ejs', `__tests__/index.test.js`)
 
     info(`Unit ${unitName} successfully created!`)
   }, error)
