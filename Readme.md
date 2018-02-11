@@ -15,7 +15,7 @@ Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf measurements
 ## Data Structures
 
 * [Array](src/dataStructures/Array)
-* Hash Table
+* [Hash Table](src/dataStructures/HashTable)
 * Set
 * Singly Linked List
 * Doubly Linked List
