@@ -22,7 +22,7 @@ Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf measurements
 * Stack
 * Queue
 * Tree
-* [Binary search tree](src/dataStructures/binarySearchTree)
+* [Binary search tree](src/dataStructures/BinarySearchTree)
 * Trie
 * Graph
 

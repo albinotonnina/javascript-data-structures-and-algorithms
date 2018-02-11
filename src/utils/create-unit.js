@@ -12,6 +12,13 @@ const error = message => console.error(chalk.red(message))
 
 const questions = [
   {
+    name: 'destination',
+    type: 'list',
+    message: 'What this is?',
+    default: 'dataStructures',
+    choices: ['Data Structure', 'Algorithm']
+  },
+  {
     name: 'name',
     message: 'How are you gonna call me?',
     default: 'My Unit',
@@ -50,12 +57,11 @@ const render = (options, template, out) => {
       : '()'
 
   const extendedOptions = Object.assign({}, options, {
-    name: options.name,
     arguments: args
   })
   chalk.blue(extendedOptions)
   const input = path.join(templates, template)
-  const output = path.join(src, options.name, out)
+  const output = path.join(src, options.destination, options.name, out)
 
   const code = ejs.render(fs.readFileSync(input, 'utf8'), extendedOptions)
   fs.writeFileSync(output, code)
@@ -65,7 +71,10 @@ inquirer
   .prompt(questions)
   .then(options => {
     const unitName = upperFirst(camelcase(options.name))
-    const dirName = path.join(src, unitName)
+
+    const destination = options.destination === 'Data Structure' ? 'dataStructures': 'algorithms'
+
+    const dirName = path.join(src, destination, unitName)
     const dirNameTest = path.join(dirName, '__tests__')
 
     try {
@@ -82,7 +91,8 @@ inquirer
     const extendedOptions = {
       ...options,
       ...{
-        name: unitName
+        name: unitName,
+        destination
       }
     }
 
