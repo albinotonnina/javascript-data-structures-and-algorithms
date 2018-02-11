@@ -1,5 +1,5 @@
 
-# ⚗️ Binary search tree implementation
+# ⚗️ Binary search tree
 
 ES6 and classes
 
@@ -10,16 +10,6 @@ ES6 and classes
 * insert: Linear — O(n), or O(log n) in average case
 * contains: Linear — O(n), or O(log n) in average case
 * depthFirstLog: Linear — O(n), or O(log n) in average case
-
-### Install
-`npm install`
-
-### Test
-`npm run test`
-
-### Start
-`npm start`
-
 
 ## Exercises
 

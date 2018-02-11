@@ -19,6 +19,7 @@ Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf measurements
 * [reverseArrayInPlace](src/reverseArrayInPlace)
 * [meanMedianMode](src/meanMedianMode)
 * [twoSum](src/twoSum)
+* [Binary search tree](src/binarySearchTree)
 * [getEvenOccurrence](src/getEvenOccurrence): Find the first even occurrence of a number in an array
 * [getAllPermutations](src/getPermutations): Get all the permutations of a string
 * [Roman to Numerals](src/romanToNumerals): Translate Romans into numerals
