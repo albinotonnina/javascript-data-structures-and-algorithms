@@ -1,4 +1,4 @@
-import { displayPerfTime } from '../../utils/perf-utils'
+import { displayPerfTime } from '../../../utils/perf-utils'
 
 import { fizzBuzz1, fizzBuzz2 } from '../fizzbuzz'
 
