@@ -6,6 +6,7 @@ ES6 and classes
 ![alt text](https://img.ziggi.org/pRzheJmf.gif "Binary search tree")
 
 ## Complexity
+
 * delete: Linear — O(n), or O(log n) in average case
 * insert: Linear — O(n), or O(log n) in average case
 * contains: Linear — O(n), or O(log n) in average case

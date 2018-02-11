@@ -4,6 +4,7 @@ const ejs = require('ejs')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 const camelcase = require('lodash').camelCase
+const upperFirst = require('lodash').upperFirst
 
 const info = message => console.error(chalk.cyan(message))
 const warning = message => console.error(chalk.yellow(message))
@@ -41,8 +42,6 @@ const src = path.resolve(__dirname, '../')
 const templates = path.resolve(__dirname, 'templates')
 
 const render = (options, template, out) => {
-  const name = camelcase(options.name)
-
   const argumentsArr = options.arguments.length > 0 ? options.arguments.split(',') : []
 
   const args =
@@ -51,12 +50,12 @@ const render = (options, template, out) => {
       : '()'
 
   const extendedOptions = Object.assign({}, options, {
-    name,
+    name: options.name,
     arguments: args
   })
   chalk.blue(extendedOptions)
   const input = path.join(templates, template)
-  const output = path.join(src, name, out)
+  const output = path.join(src, options.name, out)
 
   const code = ejs.render(fs.readFileSync(input, 'utf8'), extendedOptions)
   fs.writeFileSync(output, code)
@@ -65,7 +64,7 @@ const render = (options, template, out) => {
 inquirer
   .prompt(questions)
   .then(options => {
-    const unitName = camelcase(options.name)
+    const unitName = upperFirst(camelcase(options.name))
     const dirName = path.join(src, unitName)
     const dirNameTest = path.join(dirName, '__tests__')
 
@@ -80,13 +79,20 @@ inquirer
       }
     }
 
-    render(options, 'README.ejs', 'README.md')
+    const extendedOptions = {
+      ...options,
+      ...{
+        name: unitName
+      }
+    }
 
-    render(options, 'Unit.ejs', `index.js`)
+    render(extendedOptions, 'README.ejs', 'README.md')
 
-    render(options, 'Test.ejs', `__tests__/${unitName}.test.js`)
+    render(extendedOptions, 'Unit.ejs', `index.js`)
 
-    info(`Unit ${options.name} successfully created!`)
+    render(extendedOptions, 'Test.ejs', `__tests__/${unitName}.test.js`)
+
+    info(`Unit ${unitName} successfully created!`)
   }, error)
   .catch(error => {
     throw error
