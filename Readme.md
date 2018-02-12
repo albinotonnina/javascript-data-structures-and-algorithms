@@ -19,7 +19,7 @@ Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf measurements
 * [Set](src/dataStructures/Set)
 * [Singly Linked List](src/dataStructures/SinglyLinkedList)
 * [Doubly Linked List](src/dataStructures/DoublyLinkedList)
-* Stack
+* [Stack](src/dataStructures/Stack)
 * Queue
 * Tree
 * [Binary search tree](src/dataStructures/BinarySearchTree)
