@@ -1,6 +1,6 @@
 {
-  "printWidth": 100,
-  "parser": "flow",
+  "singleQuote": true,
+  "bracketSpacing": false,
   "semi": false,
-  "singleQuote": true
+  "printWidth": 80
 }
