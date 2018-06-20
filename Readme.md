@@ -1,6 +1,6 @@
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![Dependency Up-to-dateness][david-image]][david-url]
-[![Build Status](https://travis-ci.org/albinotonnina/javascript-problems.svg?branch=master)](https://travis-ci.org/albinotonnina/javascript-problems)
+[![Build Status](https://travis-ci.org/albinotonnina/javascript-data-structures-and-algorithms.svg?branch=master)](https://travis-ci.org/albinotonnina/javascript-data-structures-and-algorithms)
 [![codecov](https://codecov.io/gh/albinotonnina/javascript-data-structures-and-algorithms/branch/master/graph/badge.svg)](https://codecov.io/gh/albinotonnina/javascript-data-structures-and-algorithms)
 
 # 🤯 Data Structures and Algorithms
