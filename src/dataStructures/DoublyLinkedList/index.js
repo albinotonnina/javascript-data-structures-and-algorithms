@@ -88,11 +88,11 @@ class DoublyLinkedList {
     }
   }
 
-  length(){
+  length() {
     return this.numberOfValues
   }
 
-  print(){
+  print() {
     let string = ''
     let current = this.head
     while (current) {
@@ -102,6 +102,5 @@ class DoublyLinkedList {
     return string.trim()
   }
 }
-
 
 module.exports = DoublyLinkedList

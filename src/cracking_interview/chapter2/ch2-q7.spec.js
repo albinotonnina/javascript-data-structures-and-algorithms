@@ -1,25 +1,24 @@
-import * as helpers from './helpers';
-import * as funcs from './ch2-q7';
+import * as helpers from './helpers'
+import * as funcs from './ch2-q7'
 
 function generateList(length) {
-  let list = helpers.createLinkedList();
+  let list = helpers.createLinkedList()
   for (let i = length; i > 0; --i) {
-    helpers.pushSingle(list, 100 + Math.random() * 999999);
+    helpers.pushSingle(list, 100 + Math.random() * 999999)
   }
-  return list;
+  return list
 }
 
 for (let key in funcs) {
-  let func = funcs[key];
+  let func = funcs[key]
 
   describe('ch2-q7: ' + key, function() {
-
     it('correctly identifies first node when both lists are the same', function() {
-      let list = generateList(10);
-      expect(func(list.head, list.head)).toBe(list.head);
-    });
+      let list = generateList(10)
+      expect(func(list.head, list.head)).toBe(list.head)
+    })
 
-    [
+    ;[
       {
         len1: 1,
         len2: 1,
@@ -46,21 +45,22 @@ for (let key in funcs) {
         lenCommon: 11
       }
     ].forEach(context => {
-
       let one = generateList(context.len1),
         two = generateList(context.len2),
-        common = generateList(context.lenCommon);
+        common = generateList(context.lenCommon)
 
-      it(`returns undefined with list1:${context.len1} & list2:${context.len2} that do not intersect`, function() {
-        expect(func(one.head, two.head)).toBeUndefined();
-      });
+      it(`returns undefined with list1:${context.len1} & list2:${
+        context.len2
+      } that do not intersect`, function() {
+        expect(func(one.head, two.head)).toBeUndefined()
+      })
 
-      it(`returns correct node with list1:${context.len1} & list2:${context.len2} that intersect`, function() {
-        one.tail.next = two.tail.next = common.head;
-        expect(func(one.head, two.head)).toBe(common.head);
-      });
-
-    });
-
-  });
+      it(`returns correct node with list1:${context.len1} & list2:${
+        context.len2
+      } that intersect`, function() {
+        one.tail.next = two.tail.next = common.head
+        expect(func(one.head, two.head)).toBe(common.head)
+      })
+    })
+  })
 }

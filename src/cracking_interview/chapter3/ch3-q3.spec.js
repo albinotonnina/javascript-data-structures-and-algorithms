@@ -48,7 +48,9 @@ for (let key in classes) {
         expect(thisStack.popAt(2)).toBe(8 + i)
       }
 
-      ;[20, 19, 18, 17, 7, 6, 5, 4, 3, 2, 1].forEach(v => expect(thisStack.pop()).toBe(v))
+      ;[20, 19, 18, 17, 7, 6, 5, 4, 3, 2, 1].forEach(v =>
+        expect(thisStack.pop()).toBe(v)
+      )
     })
   })
 }

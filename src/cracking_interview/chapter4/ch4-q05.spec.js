@@ -21,11 +21,25 @@ for (let key in funcs) {
 
     it('returns true for larger BSTs', function() {
       // Tree class maintains BST property so this should be valid
-      ;[100, 20, 10, 5, 1, 2, 3, 7, 8, 9, 15, 35, 25, 30, 45].forEach(v => thisTree.add(v))
-      expect(func(thisTree)).toBe(true)
-      ;[200, 150, 120, 115, 145, 130, 135, 160, 180, 175, 170, 165, 190].forEach(v =>
+      ;[100, 20, 10, 5, 1, 2, 3, 7, 8, 9, 15, 35, 25, 30, 45].forEach(v =>
         thisTree.add(v)
       )
+      expect(func(thisTree)).toBe(true)
+      ;[
+        200,
+        150,
+        120,
+        115,
+        145,
+        130,
+        135,
+        160,
+        180,
+        175,
+        170,
+        165,
+        190
+      ].forEach(v => thisTree.add(v))
       expect(func(thisTree)).toBe(true)
       ;[220, 205, 210, 225, 230, 215, 240].forEach(v => thisTree.add(v))
       expect(func(thisTree)).toBe(true)
@@ -58,14 +72,28 @@ for (let key in funcs) {
 
     it('returns false for larger trees that are not BSTs', function() {
       // Tree class maintains BST property so this should be valid
-      ;[20, 10, 5, 1, 2, 3, 7, 8, 9, 15, 35, 25, 30, 45].forEach(v => thisTree.add(v))
+      ;[20, 10, 5, 1, 2, 3, 7, 8, 9, 15, 35, 25, 30, 45].forEach(v =>
+        thisTree.add(v)
+      )
       // now we need to invalidate BST
       thisTree.root.val = 50
       expect(func(thisTree)).toBe(false)
       thisTree.root = null
-      ;[200, 150, 120, 115, 145, 130, 135, 160, 180, 175, 170, 165, 190].forEach(v =>
-        thisTree.add(v)
-      )
+      ;[
+        200,
+        150,
+        120,
+        115,
+        145,
+        130,
+        135,
+        160,
+        180,
+        175,
+        170,
+        165,
+        190
+      ].forEach(v => thisTree.add(v))
       thisTree.root.left.left.val = 200
       expect(func(thisTree)).toBe(false)
       thisTree.root.val = 100

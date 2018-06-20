@@ -1,12 +1,11 @@
-import * as helpers from './helpers';
-import * as funcs from './ch2-q4';
+import * as helpers from './helpers'
+import * as funcs from './ch2-q4'
 
 for (let key in funcs) {
-  let func = funcs[key];
+  let func = funcs[key]
 
   describe('ch2-q4: ' + key, function() {
-
-    [
+    ;[
       {
         list: [5, 8, 7, 4, 9, 15, 30],
         value: 3,
@@ -43,13 +42,14 @@ for (let key in funcs) {
         expected: [4, 9, 5, 8, 7, 1, 5, 6, 7, 15, 30, 20, 25, 20, 21, 21, 15]
       }
     ].forEach(context => {
-
-      it(`partitioning list ${context.list} around ${context.value}`, function() {
-        let list = helpers.arrayToLinkedList(context.list);
-        expect(helpers.linkedListToArray(func(list, context.value))).toEqual(context.expected);
-      });
-
-    });
-
-  });
+      it(`partitioning list ${context.list} around ${
+        context.value
+      }`, function() {
+        let list = helpers.arrayToLinkedList(context.list)
+        expect(helpers.linkedListToArray(func(list, context.value))).toEqual(
+          context.expected
+        )
+      })
+    })
+  })
 }

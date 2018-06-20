@@ -1,11 +1,5 @@
-
 class NextUntil {
-  constructor(array) {
-
-
-  }
-
-
+  constructor(array) {}
 }
 
 export default NextUntil

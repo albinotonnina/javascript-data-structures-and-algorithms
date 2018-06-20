@@ -1,11 +1,11 @@
-'use strict';
+'use strict'
 
 class Node {
   constructor(value, parent) {
-    this.left = this.right = null;
-    this.parent = parent || null;
-    this.val = value;
-    this.size = 1; // including itself
+    this.left = this.right = null
+    this.parent = parent || null
+    this.val = value
+    this.size = 1 // including itself
   }
 }
 
@@ -31,105 +31,99 @@ class Node {
  */
 export class RandomBinarySearchTree {
   constructor() {
-    this.root = null;
+    this.root = null
   }
 
   insert(value) {
     let node = this,
-      branch = 'root';
+      branch = 'root'
     while (node[branch]) {
-      node = node[branch];
-      ++node.size;
-      branch = value < node.val ? 'left' : 'right';
+      node = node[branch]
+      ++node.size
+      branch = value < node.val ? 'left' : 'right'
     }
-    node[branch] = new Node(value, node);
+    node[branch] = new Node(value, node)
   }
 
   delete(value) {
-    return this._deleteRecursive(this.root, 'root', value);
+    return this._deleteRecursive(this.root, 'root', value)
   }
 
   _deleteRecursive(node, parentBranch, value) {
     if (node) {
       if (node.val === value) {
         if (!node.left && !node.right) {
-          node.parent[parentBranch] = null;
-          return true;
-        }
-        else if (node.left && !node.right) {
-          node.parent[parentBranch] = node.left;
-          return true;
-        }
-        else if (!node.left && node.right) {
-          node.parent[parentBranch] = node.right;
-          return true;
-        }
-        else {
-          let minNode = node.right;
+          node.parent[parentBranch] = null
+          return true
+        } else if (node.left && !node.right) {
+          node.parent[parentBranch] = node.left
+          return true
+        } else if (!node.left && node.right) {
+          node.parent[parentBranch] = node.right
+          return true
+        } else {
+          let minNode = node.right
           while (minNode.left) {
-            minNode = minNode.left;
+            minNode = minNode.left
           }
-          node.val = minNode.val;
-          --node.size;
-          return this._deleteRecursive(node.right, 'right', minNode.val);
+          node.val = minNode.val
+          --node.size
+          return this._deleteRecursive(node.right, 'right', minNode.val)
         }
-      }
-      else {
-        let branch = value < node.val ? 'left' : 'right';
+      } else {
+        let branch = value < node.val ? 'left' : 'right'
         if (this._deleteRecursive(node[branch], branch, value)) {
-          --node.size;
-          return true;
+          --node.size
+          return true
         }
       }
     }
 
-    return false;
+    return false
   }
 
   find(value) {
     let node = this.root,
-      branch;
+      branch
     while (node) {
       if (node.val === value) {
-        return node;
+        return node
       }
-      branch = value < node.val ? 'left' : 'right';
-      node = node[branch];
+      branch = value < node.val ? 'left' : 'right'
+      node = node[branch]
     }
-    return undefined;
+    return undefined
   }
 
   randomNode() {
     if (!this.root) {
-      return undefined;
+      return undefined
     }
 
     let idx = Math.ceil(Math.random() * this.root.size),
-      node = this.root;
+      node = this.root
     while (idx > 0) {
       if (node.left) {
         if (idx === node.left.size + 1) {
-          return node;
+          return node
+        } else if (idx <= node.left.size) {
+          node = node.left
+        } else if (node.right) {
+          idx -= node.left.size + 1
+          node = node.right
         }
-        else if (idx <= node.left.size) {
-          node = node.left;
-        }
-        else if (node.right) {
-          idx -= node.left.size + 1;
-          node = node.right;
-        }
-      }
-      else {
+      } else {
         if (idx <= 1) {
-          return node;
-        }
-        else if (node.right) {
-          --idx;
-          node = node.right;
+          return node
+        } else if (node.right) {
+          --idx
+          node = node.right
         }
       }
     }
 
-    throw new Error('Should never reach this code, this is just an assertion that we dont');
+    throw new Error(
+      'Should never reach this code, this is just an assertion that we dont'
+    )
   }
 }

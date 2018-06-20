@@ -1,12 +1,11 @@
-import * as helpers from './helpers';
-import * as funcs from './ch2-q5';
+import * as helpers from './helpers'
+import * as funcs from './ch2-q5'
 
 for (let key in funcs) {
-  let func = funcs[key];
+  let func = funcs[key]
 
   describe('ch2-q5: ' + key, function() {
-
-    [
+    ;[
       {
         one: [1],
         two: [1],
@@ -43,14 +42,13 @@ for (let key in funcs) {
         expected: [9, 8, 7, 6, 5, 4, 3, 2, 1]
       }
     ].forEach(context => {
-
       it(`correctly adds ${context.one} and ${context.two}`, function() {
-        let result = func(helpers.arrayToLinkedList(context.one),
-          helpers.arrayToLinkedList(context.two));
-        expect(helpers.linkedListToArray(result)).toEqual(context.expected);
-      });
-
-    });
-
-  });
+        let result = func(
+          helpers.arrayToLinkedList(context.one),
+          helpers.arrayToLinkedList(context.two)
+        )
+        expect(helpers.linkedListToArray(result)).toEqual(context.expected)
+      })
+    })
+  })
 }

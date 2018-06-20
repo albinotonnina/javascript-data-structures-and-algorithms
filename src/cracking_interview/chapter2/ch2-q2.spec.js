@@ -1,23 +1,28 @@
-import * as helpers from './helpers';
-import * as funcs from './ch2-q2';
+import * as helpers from './helpers'
+import * as funcs from './ch2-q2'
 
 for (let key in funcs) {
-  let func = funcs[key];
+  let func = funcs[key]
 
   describe('ch2-q2: ' + key, function() {
-
     it('throws an error if list is not an array', function() {
-      expect(() => func(null)).toThrowError('invalid list');
-      expect(() => func(undefined)).toThrowError('invalid list');
-    });
+      expect(() => func(null)).toThrowError('invalid list')
+      expect(() => func(undefined)).toThrowError('invalid list')
+    })
 
     it('throws an error if list is shorter than k', function() {
-      expect(() => func(helpers.arrayToLinkedList([1]), 1)).toThrowError('list is not long enough');
-      expect(() => func(helpers.arrayToLinkedList([1, 2, 3]), 3)).toThrowError('list is not long enough');
-      expect(() => func(helpers.arrayToLinkedList([1, 2, 3]), 4)).toThrowError('list is not long enough');
-    });
+      expect(() => func(helpers.arrayToLinkedList([1]), 1)).toThrowError(
+        'list is not long enough'
+      )
+      expect(() => func(helpers.arrayToLinkedList([1, 2, 3]), 3)).toThrowError(
+        'list is not long enough'
+      )
+      expect(() => func(helpers.arrayToLinkedList([1, 2, 3]), 4)).toThrowError(
+        'list is not long enough'
+      )
+    })
 
-    [
+    ;[
       {
         list: [5],
         k: 0
@@ -43,14 +48,13 @@ for (let key in funcs) {
         k: 16
       }
     ].forEach(context => {
-
-      it(`can get the ${context.k}th to last element in ${context.list}`, function() {
+      it(`can get the ${context.k}th to last element in ${
+        context.list
+      }`, function() {
         let list = helpers.arrayToLinkedList(context.list),
-          expected = context.list[context.list.length - 1 - context.k];
-        expect(func(list, context.k)).toEqual(expected);
-      });
-
-    });
-
-  });
+          expected = context.list[context.list.length - 1 - context.k]
+        expect(func(list, context.k)).toEqual(expected)
+      })
+    })
+  })
 }

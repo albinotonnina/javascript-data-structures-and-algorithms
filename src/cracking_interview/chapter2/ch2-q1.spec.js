@@ -1,17 +1,16 @@
-import * as helpers from './helpers';
-import * as funcs from './ch2-q1';
+import * as helpers from './helpers'
+import * as funcs from './ch2-q1'
 
 for (let key in funcs) {
-  let func = funcs[key];
+  let func = funcs[key]
 
   describe('ch2-q1: ' + key, function() {
-
     it('returns input if falsy', function() {
-      expect(func(null)).toBeNull();
-      expect(func(undefined)).toBeUndefined();
-    });
+      expect(func(null)).toBeNull()
+      expect(func(undefined)).toBeUndefined()
+    })
 
-    [
+    ;[
       {
         list: [5],
         expected: [5]
@@ -37,14 +36,13 @@ for (let key in funcs) {
         expected: [8, 9, 6, 4, 2, 3, 1]
       }
     ].forEach(context => {
-
-      it(`list ${context.list} correctly updated to ${context.expected}`, function() {
-        let list = helpers.arrayToLinkedList(context.list);
-        func(list);
-        expect(helpers.linkedListToArray(list)).toEqual(context.expected);
-      });
-
-    });
-
-  });
+      it(`list ${context.list} correctly updated to ${
+        context.expected
+      }`, function() {
+        let list = helpers.arrayToLinkedList(context.list)
+        func(list)
+        expect(helpers.linkedListToArray(list)).toEqual(context.expected)
+      })
+    })
+  })
 }

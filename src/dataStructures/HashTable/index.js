@@ -1,7 +1,6 @@
 // the bucketing hash map
 // refactored from https://gist.github.com/alexhawkins/f6329420f40e5cafa0a4
 class HashTable {
-
   constructor(size = 8) {
     this._storage = []
     this._count = 0

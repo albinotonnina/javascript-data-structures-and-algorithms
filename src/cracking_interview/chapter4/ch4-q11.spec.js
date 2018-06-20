@@ -21,7 +21,6 @@ for (let key in classes) {
       expect(thisObj.randomNode().val).toBe(1)
       expect(thisObj.randomNode().val).toBe(1)
     })
-
     ;[
       {
         desc: 'balanced',

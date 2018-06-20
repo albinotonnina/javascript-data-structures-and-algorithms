@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-import { Tree } from './helpers';
+import {Tree} from './helpers'
 
 /**
  * As the list is already sorted the best way to create a balanced tree is by
@@ -13,21 +13,20 @@ import { Tree } from './helpers';
  * Additional space: O(N)
  */
 export function makeBalancedTree(values) {
-  let tree = new Tree();
+  let tree = new Tree()
   if (values && values.length) {
-    add(tree, values, 0, values.length - 1);
+    add(tree, values, 0, values.length - 1)
   }
-  return tree;
+  return tree
 }
 
 function add(tree, values, start, end) {
   if (start === end) {
-    tree.add(values[start]);
-  }
-  else if (start < end) {
-    let mid = start + Math.floor((end - start) / 2);
-    tree.add(values[mid]);
-    add(tree, values, start, mid - 1);
-    add(tree, values, mid + 1, end);
+    tree.add(values[start])
+  } else if (start < end) {
+    let mid = start + Math.floor((end - start) / 2)
+    tree.add(values[mid])
+    add(tree, values, start, mid - 1)
+    add(tree, values, mid + 1, end)
   }
 }

@@ -1,18 +1,17 @@
-import * as funcs from './ch1-q5';
+import * as funcs from './ch1-q5'
 
 for (let key in funcs) {
-  let func = funcs[key];
+  let func = funcs[key]
 
   describe('ch1-q5: ' + key, function() {
-
     it('returns true for the same string', function() {
-      let str = 'abcdef';
-      expect(func(str, str)).toBe(true);
-      str = 'a1b2c3d4';
-      expect(func(str, str)).toBe(true);
-    });
+      let str = 'abcdef'
+      expect(func(str, str)).toBe(true)
+      str = 'a1b2c3d4'
+      expect(func(str, str)).toBe(true)
+    })
 
-    [
+    ;[
       ['pale', 'ple'],
       ['pales', 'pale'],
       ['pale', 'bale'],
@@ -22,14 +21,14 @@ for (let key in funcs) {
       ['answers', 'answer'],
       ['technology', 'etechnology']
     ].forEach(args => {
+      it(`returns true for strings that are one edit: '${args[0]}' & '${
+        args[1]
+      }'`, function() {
+        expect(func(args[0], args[1])).toBe(true)
+      })
+    })
 
-      it(`returns true for strings that are one edit: '${args[0]}' & '${args[1]}'`, function() {
-        expect(func(args[0], args[1])).toBe(true);
-      });
-
-    });
-
-    [
+    ;[
       ['pale', 'pl'],
       ['paless', 'pale'],
       ['pale', 'bales'],
@@ -38,12 +37,11 @@ for (let key in funcs) {
       ['45678', '1239'],
       ['abcd', 'dcba']
     ].forEach(args => {
-
-      it(`returns false for strings that are more than one edit: '${args[0]}' & '${args[1]}'`, function() {
-        expect(func(args[0].split(''), args[1].split(''))).toBe(false);
-      });
-
-    });
-
-  });
+      it(`returns false for strings that are more than one edit: '${
+        args[0]
+      }' & '${args[1]}'`, function() {
+        expect(func(args[0].split(''), args[1].split(''))).toBe(false)
+      })
+    })
+  })
 }

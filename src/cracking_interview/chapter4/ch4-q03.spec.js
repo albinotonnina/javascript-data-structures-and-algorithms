@@ -30,7 +30,12 @@ for (let key in funcs) {
 
     it('returns 2 value lists for upside down V shaped tree', function() {
       ;[10, 11, 12, 13, 9, 8, 7].forEach(v => thisTree.add(v))
-      expect(toArrayOfArrays(func(thisTree))).toEqual([[10], [9, 11], [8, 12], [7, 13]])
+      expect(toArrayOfArrays(func(thisTree))).toEqual([
+        [10],
+        [9, 11],
+        [8, 12],
+        [7, 13]
+      ])
     })
 
     it('returns true for larger balanced tree', function() {

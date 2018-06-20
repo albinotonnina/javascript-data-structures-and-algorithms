@@ -1,7 +1,12 @@
 export const fizzBuzz1 = num => {
   return [...Array(num).keys()]
     .map((_, i) => i + 1)
-    .map(i => (i % 15 === 0 ? 'FizzBuzz' : i % 3 === 0 ? 'Fizz' : i % 5 === 0 ? 'Buzz' : i))
+    .map(
+      i =>
+        i % 15 === 0
+          ? 'FizzBuzz'
+          : i % 3 === 0 ? 'Fizz' : i % 5 === 0 ? 'Buzz' : i
+    )
 }
 
 /*

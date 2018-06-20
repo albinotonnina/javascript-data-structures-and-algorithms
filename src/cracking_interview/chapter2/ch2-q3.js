@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * Copy the value from the next node into the current node object and then
@@ -9,9 +9,9 @@
  */
 export function deleteMiddleNode(node) {
   if (!node || !node.next) {
-    throw new Error('invalid node');
+    throw new Error('invalid node')
   }
 
-  node.val = node.next.val;
-  node.next = node.next.next;
+  node.val = node.next.val
+  node.next = node.next.next
 }

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * Scan through both strings's at the same time, when a difference is
@@ -19,26 +19,25 @@
 export function isOneOrLessAway(str1, str2) {
   // if lengths differ by more than 1 then can't be true
   if (Math.abs(str1.length - str2.length) > 1) {
-    return false;
+    return false
   }
 
-  let isEdited = false;
+  let isEdited = false
   for (let i = 0, j = 0; i < str1.length && j < str2.length; ++i, ++j) {
     if (str1[i] !== str2[j]) {
       if (isEdited) {
         // second edit
-        return false;
+        return false
       }
 
       if (str1.length > str2.length) {
-        --j; // decrease j, we are deleting char from str1
+        --j // decrease j, we are deleting char from str1
+      } else if (str1.length < str2.length) {
+        --i // decrease i, we are deleting char from str2
       }
-      else if (str1.length < str2.length) {
-        --i; // decrease i, we are deleting char from str2
-      }
-      isEdited = true;
+      isEdited = true
     }
   }
 
-  return true;
+  return true
 }

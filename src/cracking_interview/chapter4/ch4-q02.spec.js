@@ -1,42 +1,39 @@
-import { isBalanced } from './helpers';
-import * as funcs from './ch4-q02';
+import {isBalanced} from './helpers'
+import * as funcs from './ch4-q02'
 
 for (let key in funcs) {
-  let func = funcs[key];
+  let func = funcs[key]
 
   describe('ch4-q02: ' + key, function() {
-
     it('returns empty tree with no values', function() {
-      let tree = func(null);
-      expect(tree.root).toBeNull();
-      tree = func([]);
-      expect(tree.root).toBeNull();
-    });
+      let tree = func(null)
+      expect(tree.root).toBeNull()
+      tree = func([])
+      expect(tree.root).toBeNull()
+    })
 
     it('returns tree with root node set with one value', function() {
-      let tree = func([10]);
-      expect(tree.root.val).toBe(10);
-    });
+      let tree = func([10])
+      expect(tree.root.val).toBe(10)
+    })
 
     it('returns a balanced tree with 10 nodes', function() {
-      let tree = func([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
-      expect(isBalanced(tree)).toBe(true);
-    });
+      let tree = func([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+      expect(isBalanced(tree)).toBe(true)
+    })
 
     it('returns a balanced tree with 13 nodes', function() {
-      let tree = func([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
-      expect(isBalanced(tree)).toBe(true);
-    });
+      let tree = func([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+      expect(isBalanced(tree)).toBe(true)
+    })
 
     it('returns a balanced tree with 255 nodes', function() {
-      let values = [];
+      let values = []
       for (let i = 1; i <= 255; ++i) {
-        values.push(i);
+        values.push(i)
       }
-      let tree = func(values);
-      expect(isBalanced(tree)).toBe(true);
-    });
-
-  });
-
+      let tree = func(values)
+      expect(isBalanced(tree)).toBe(true)
+    })
+  })
 }

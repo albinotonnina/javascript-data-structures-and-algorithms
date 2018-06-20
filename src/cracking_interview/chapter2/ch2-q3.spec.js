@@ -1,28 +1,29 @@
-import * as helpers from './helpers';
-import * as funcs from './ch2-q3';
+import * as helpers from './helpers'
+import * as funcs from './ch2-q3'
 
 for (let key in funcs) {
-  let func = funcs[key];
+  let func = funcs[key]
 
   describe('ch2-q3: ' + key, function() {
-
     it('throws an error if node is invalid', function() {
-      expect(() => func(null)).toThrowError('invalid node');
-      expect(() => func(undefined)).toThrowError('invalid node');
-      expect(() => func(helpers.arrayToLinkedList([11]))).toThrowError('invalid node');
-    });
+      expect(() => func(null)).toThrowError('invalid node')
+      expect(() => func(undefined)).toThrowError('invalid node')
+      expect(() => func(helpers.arrayToLinkedList([11]))).toThrowError(
+        'invalid node'
+      )
+    })
 
     it('can delete multiple in long list', function() {
-      let list = helpers.arrayToLinkedList([8, 6, 4, 2, 1]);
-      func(list);
-      func(list);
-      func(list);
-      func(list);
-      expect(list.val).toBe(1);
-      expect(list.next).toBeNull();
-    });
+      let list = helpers.arrayToLinkedList([8, 6, 4, 2, 1])
+      func(list)
+      func(list)
+      func(list)
+      func(list)
+      expect(list.val).toBe(1)
+      expect(list.next).toBeNull()
+    })
 
-    [
+    ;[
       {
         list: [5, 8],
         node: 0,
@@ -49,18 +50,15 @@ for (let key in funcs) {
         expected: [5, 8, 2, 7, 1, 4, 9, 15, 30]
       }
     ].forEach(context => {
-
       it(`removing node ${context.node} from list ${context.list}`, function() {
         let list = helpers.arrayToLinkedList(context.list),
-          node = list;
+          node = list
         for (let i = 0; i < context.node; ++i) {
-          node = node.next;
+          node = node.next
         }
-        func(node);
-        expect(helpers.linkedListToArray(list)).toEqual(context.expected);
-      });
-
-    });
-
-  });
+        func(node)
+        expect(helpers.linkedListToArray(list)).toEqual(context.expected)
+      })
+    })
+  })
 }

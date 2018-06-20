@@ -11,15 +11,15 @@ class Stack {
     return this.stack.pop()
   }
 
-  peek(){
+  peek() {
     return this.stack[this.stack.length - 1]
   }
 
-  length(){
+  length() {
     return this.stack.length
   }
 
-  print(){
+  print() {
     return this.stack.join(' ')
   }
 }

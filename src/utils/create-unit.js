@@ -40,7 +40,11 @@ const questions = [
     default: '',
     validate(value) {
       const valid = /[0-9a-zA-Z]+(,[0-9a-zA-Z]+)*/.test(value)
-      return valid || value === '' || 'Component name should match /^[A-Z][a-zA-Z]+$/'
+      return (
+        valid ||
+        value === '' ||
+        'Component name should match /^[A-Z][a-zA-Z]+$/'
+      )
     }
   }
 ]
@@ -49,7 +53,8 @@ const src = path.resolve(__dirname, '../')
 const templates = path.resolve(__dirname, 'templates')
 
 const render = (options, template, out) => {
-  const argumentsArr = options.arguments.length > 0 ? options.arguments.split(',') : []
+  const argumentsArr =
+    options.arguments.length > 0 ? options.arguments.split(',') : []
 
   const args =
     argumentsArr.length > 0
@@ -72,7 +77,8 @@ inquirer
   .then(options => {
     const unitName = upperFirst(camelcase(options.name))
 
-    const destination = options.destination === 'Data Structure' ? 'dataStructures': 'algorithms'
+    const destination =
+      options.destination === 'Data Structure' ? 'dataStructures' : 'algorithms'
 
     const dirName = path.join(src, destination, unitName)
     const dirNameTest = path.join(dirName, '__tests__')

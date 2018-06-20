@@ -6,8 +6,10 @@ export const caesarCipher = (str, num) => {
     .split('')
     .map(char => {
       const currentIndex = char.charCodeAt(0)
-      const isInUpperRange = index => index >= asciiUpper[0] && index <= asciiUpper[1]
-      const isInLowerRange = index => index >= asciiLower[0] && index <= asciiLower[1]
+      const isInUpperRange = index =>
+        index >= asciiUpper[0] && index <= asciiUpper[1]
+      const isInLowerRange = index =>
+        index >= asciiLower[0] && index <= asciiLower[1]
 
       let newIndex = currentIndex + num
 
@@ -98,6 +100,10 @@ export const caesarCipher3 = (str, num) => {
 
 export const caesarCipher4 = (str, num) => {
   return str
-    .replace(/[A-Z]/g, c => String.fromCharCode((c.charCodeAt(0) - 65 + num) % 26 + 65))
-    .replace(/[a-z]/g, c => String.fromCharCode((c.charCodeAt(0) - 97 + num) % 26 + 97))
+    .replace(/[A-Z]/g, c =>
+      String.fromCharCode((c.charCodeAt(0) - 65 + num) % 26 + 65)
+    )
+    .replace(/[a-z]/g, c =>
+      String.fromCharCode((c.charCodeAt(0) - 97 + num) % 26 + 97)
+    )
 }

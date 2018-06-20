@@ -16,7 +16,9 @@ class ResponseHandler {
     let handlers = this.handlers.filter(handle => handle.code === status)
 
     if (handlers.length === 0) {
-      handlers = this.handlers.filter(handle => handle.code === Math.floor(status / 100) * 100)
+      handlers = this.handlers.filter(
+        handle => handle.code === Math.floor(status / 100) * 100
+      )
     }
 
     if (handlers.length === 0) {

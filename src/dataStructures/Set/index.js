@@ -34,7 +34,9 @@ class Set {
   intersect(set) {
     const newSet = new Set()
 
-    this.values.filter(value => set.contains(value)).forEach(value => newSet.add(value))
+    this.values
+      .filter(value => set.contains(value))
+      .forEach(value => newSet.add(value))
 
     return newSet
   }
@@ -42,7 +44,9 @@ class Set {
   difference(set) {
     const newSet = new Set()
 
-    this.values.filter(value => !set.contains(value)).forEach(value => newSet.add(value))
+    this.values
+      .filter(value => !set.contains(value))
+      .forEach(value => newSet.add(value))
 
     return newSet
   }
