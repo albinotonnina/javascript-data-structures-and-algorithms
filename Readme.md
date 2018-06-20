@@ -1,10 +1,11 @@
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![Dependency Up-to-dateness][david-image]][david-url]
 [![Build Status](https://travis-ci.org/albinotonnina/javascript-problems.svg?branch=master)](https://travis-ci.org/albinotonnina/javascript-problems)
+[![codecov](https://codecov.io/gh/albinotonnina/javascript-data-structures-and-algorithms/branch/master/graph/badge.svg)](https://codecov.io/gh/albinotonnina/javascript-data-structures-and-algorithms)
 
 # 🤯 Data Structures and Algorithms
 
-A bunch of common problems (interview stuff) with solutions. 
+A bunch of common problems (interview stuff) with solutions.
 
 Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf measurements
 
@@ -26,8 +27,8 @@ Written in ES6 🔥, tested with Jest 🔍 and some ⏱ perf measurements
 * Trie
 * Graph
 
-
 ## Algorithms
+
 * [Fizz-Buzz](src/algorithms/FizzBuzz)
 * [isPalindrome](src/algorithms/isPalindrome)
 * [caesarCipher](src/algorithms/caesarCipher)
