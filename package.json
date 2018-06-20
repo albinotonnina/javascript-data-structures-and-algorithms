@@ -24,5 +24,13 @@
   "dependencies": {
     "babel-preset-env": "^1.6.1",
     "colors": "^1.1.2"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "./src/tests/"
+    ]
   }
 }
