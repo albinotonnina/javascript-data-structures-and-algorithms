@@ -1,6 +1,4 @@
-import {
-  Card
-} from './Card.js';
+import {Card} from './Card.js';
 
 export class BlackJackCard extends Card {
   constructor(c, s) {

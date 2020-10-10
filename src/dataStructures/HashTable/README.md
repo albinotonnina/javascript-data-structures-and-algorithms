@@ -10,9 +10,9 @@ Hash Tables are considered the more efficient data structure for lookup and for 
 
 Average
 
-| Access        | Search        | Insertion  | Deletion |
-| ------------- |:-------------:| ----------:| --------:|
-| - |O(1)| O(1)| O(1)|
+| Access | Search | Insertion | Deletion |
+| ------ | :----: | --------: | -------: |
+| -      |  O(1)  |      O(1) |     O(1) |
 
 ### Rapresentation
 

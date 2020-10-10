@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * One way to check if two nodes are connected is to do a BFS of the graph
@@ -13,22 +13,22 @@
  */
 export function isConnectedBFS(graph, source, target) {
   let discovered = new Set(),
-    queue = [source]
+    queue = [source];
 
   while (queue.length > 0) {
-    let node = queue.shift()
+    let node = queue.shift();
     for (let neighbour of graph[node]) {
       if (!discovered.has(neighbour)) {
         if (neighbour === target) {
-          return true
+          return true;
         }
-        discovered.add(neighbour)
-        queue.push(neighbour)
+        discovered.add(neighbour);
+        queue.push(neighbour);
       }
     }
   }
 
-  return false
+  return false;
 }
 
 /**
@@ -43,20 +43,20 @@ export function isConnectedBFS(graph, source, target) {
  * Additional space: O(N)
  */
 export function isConnectedDFS(graph, source, target) {
-  return dfs(graph, new Set(), source, target)
+  return dfs(graph, new Set(), source, target);
 }
 
 function dfs(graph, discovered, source, target) {
   if (source === target) {
-    return true
+    return true;
   }
-  discovered.add(source)
+  discovered.add(source);
   for (let neighbour of graph[source]) {
     if (!discovered.has(neighbour)) {
       if (dfs(graph, discovered, neighbour, target)) {
-        return true
+        return true;
       }
     }
   }
-  return false
+  return false;
 }

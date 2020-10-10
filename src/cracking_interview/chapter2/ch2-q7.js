@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-import {getLength} from './helpers'
+import {getLength} from './helpers';
 
 /**
  * Find out the length of the two lists first. If they intersect at some point
@@ -16,28 +16,28 @@ import {getLength} from './helpers'
  */
 export function doIntersect(list1, list2) {
   let len1 = getLength(list1),
-    len2 = getLength(list2)
+    len2 = getLength(list2);
 
-  list1 = skip(list1, len1 - len2)
-  list2 = skip(list2, len2 - len1)
+  list1 = skip(list1, len1 - len2);
+  list2 = skip(list2, len2 - len1);
 
   let node1 = list1,
-    node2 = list2
+    node2 = list2;
   while (node1 && node2) {
     if (node1 === node2) {
-      return node1
+      return node1;
     }
-    node1 = node1.next
-    node2 = node2.next
+    node1 = node1.next;
+    node2 = node2.next;
   }
 
-  return undefined
+  return undefined;
 }
 
 function skip(list, num) {
   while (num > 0) {
-    list = list.next
-    --num
+    list = list.next;
+    --num;
   }
-  return list
+  return list;
 }

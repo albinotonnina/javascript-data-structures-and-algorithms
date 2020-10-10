@@ -10,9 +10,9 @@ Having two node links allow traversal in either direction but adding or removing
 
 Average
 
-| Access        | Search        | Insertion  | Deletion |
-| ------------- |:-------------:| ----------:| --------:|
-| O(N) |O(n)| O(1)| O(1)|
+| Access | Search | Insertion | Deletion |
+| ------ | :----: | --------: | -------: |
+| O(N)   |  O(n)  |      O(1) |     O(1) |
 
 ### Rapresentation
 

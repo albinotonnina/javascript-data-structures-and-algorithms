@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * This algorithm simply stores each node it sees into a Set structure, if there
@@ -11,17 +11,17 @@
  */
 export function findStartOfLoopSet(list) {
   let visited = new Set(),
-    node = list
+    node = list;
 
   while (node) {
     if (visited.has(node)) {
-      return node
+      return node;
     }
-    visited.add(node)
-    node = node.next
+    visited.add(node);
+    node = node.next;
   }
 
-  return null
+  return null;
 }
 
 /**
@@ -39,30 +39,30 @@ export function findStartOfLoopSet(list) {
  */
 export function findStartOfLoop(list) {
   if (!list) {
-    return null
+    return null;
   }
 
   let slow = list,
-    fast = list
+    fast = list;
 
   while (slow.next && fast.next && fast.next.next) {
-    slow = slow.next
-    fast = fast.next.next
+    slow = slow.next;
+    fast = fast.next.next;
     if (fast === slow) {
-      break
+      break;
     }
   }
 
   if (!slow || slow !== fast) {
     // no loop
-    return null
+    return null;
   }
 
-  slow = list
+  slow = list;
   while (slow !== fast) {
-    slow = slow.next
-    fast = fast.next
+    slow = slow.next;
+    fast = fast.next;
   }
 
-  return fast
+  return fast;
 }

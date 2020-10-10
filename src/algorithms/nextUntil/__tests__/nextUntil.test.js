@@ -1,88 +1,89 @@
-import NextUntil from '../nextUntil'
+import NextUntil from '../nextUntil';
 
 const redline = [
   {
-    name: 'paraMarker'
+    name: 'paraMarker',
   },
   {
     name: 'change',
     type: 'del',
-    value: 'foo'
+    value: 'foo',
   },
   {
-    name: 'paraMarker'
+    name: 'paraMarker',
   },
   {
     name: 'span',
-    value: 'The Directors'
+    value: 'The Directors',
   },
   {
-    name: 'paraMarker'
+    name: 'paraMarker',
   },
   {
     name: 'change',
     type: 'replace',
-    value: 'foo'
+    value: 'foo',
   },
   {
     name: 'span',
-    value: ' Bonds Plc Issuer Plc'
+    value: ' Bonds Plc Issuer Plc',
   },
   {
-    name: 'paraMarker'
-  },
-  {
-    name: 'span',
-    value: 'The Lead Manager and the other Managers (as defined in paragraph 2 below)'
-  },
-  {
-    name: 'paraMarker'
+    name: 'paraMarker',
   },
   {
     name: 'span',
-    value: '[Date]'
+    value:
+      'The Lead Manager and the other Managers (as defined in paragraph 2 below)',
   },
   {
-    name: 'paraMarker'
-  },
-  {
-    name: 'span',
-    value: 'Dear Sirs,'
-  },
-  {
-    name: 'paraMarker'
+    name: 'paraMarker',
   },
   {
     name: 'span',
-    value: 'PROPOSED '
+    value: '[Date]',
+  },
+  {
+    name: 'paraMarker',
+  },
+  {
+    name: 'span',
+    value: 'Dear Sirs,',
+  },
+  {
+    name: 'paraMarker',
+  },
+  {
+    name: 'span',
+    value: 'PROPOSED ',
   },
   {
     name: 'change',
     type: 'replace',
-    value: 'bar'
+    value: 'bar',
   },
   {
     name: 'span',
-    value: ' BONDS PLC ISSUE BY '
+    value: ' BONDS PLC ISSUE BY ',
   },
   {
     name: 'change',
     type: 'replace',
-    value: 'foo'
+    value: 'foo',
   },
   {
     name: 'span',
-    value: ' BONDS PLC ISSUER PLC (“the Issuer”)'
+    value: ' BONDS PLC ISSUER PLC (“the Issuer”)',
   },
   {
-    name: 'paraMarker'
-  }
-]
+    name: 'paraMarker',
+  },
+];
 
 describe('Get the max stack', () => {
   it('return the largest item in the stack', () => {
-    const nextUntil = new NextUntil(redline)
+    const nextUntil = new NextUntil(redline);
 
-    expect(nextUntil).toEqual({})
-  })
-})
+    expect(nextUntil).toEqual({});
+  });
+});

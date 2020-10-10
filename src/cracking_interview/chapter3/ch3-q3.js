@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * StackOfStacks uses multiple smaller stacks to hold values. New stacks are
@@ -14,57 +14,57 @@
 export class StackOfStacks {
   constructor(maxSize) {
     if (arguments.length < 1) {
-      throw new Error('maxSize argument is required')
+      throw new Error('maxSize argument is required');
     }
-    this.stacks = [[]]
-    this.max = maxSize
+    this.stacks = [[]];
+    this.max = maxSize;
   }
 
   push(value) {
     if (this.stacks[this.stacks.length - 1].length >= this.max) {
-      this.stacks.push([])
+      this.stacks.push([]);
     }
-    this.stacks[this.stacks.length - 1].push(value)
+    this.stacks[this.stacks.length - 1].push(value);
   }
 
   pop() {
-    let value = this.stacks[this.stacks.length - 1].pop()
+    let value = this.stacks[this.stacks.length - 1].pop();
     if (
       this.stacks.length > 1 &&
       this.stacks[this.stacks.length - 1].length === 0
     ) {
-      this.stacks.pop()
+      this.stacks.pop();
     }
-    return value
+    return value;
   }
 
   popAt(number) {
     if (number < 1 || number > this.stacks.length) {
-      throw new Error('stack number is invalid')
+      throw new Error('stack number is invalid');
     }
     if (number === this.stacks.length) {
-      return this.pop()
+      return this.pop();
     }
 
     let stack = this.stacks[number - 1],
       value = stack.pop(),
       tempStack = [],
-      nextStack
+      nextStack;
     // move items from subsequent stacks forward to fill the gap
     if (number < this.stacks.length) {
       for (let i = number; i < this.stacks.length; ++i) {
-        nextStack = this.stacks[i]
+        nextStack = this.stacks[i];
         // reverse next stack - we could actually use other operators in
         // JavaScript like shift or reverse to do this simpler but that would
         // be cheating
         while (nextStack.length > 0) {
-          tempStack.push(nextStack.pop())
+          tempStack.push(nextStack.pop());
         }
-        stack.push(tempStack.pop())
+        stack.push(tempStack.pop());
         while (tempStack.length > 0) {
-          nextStack.push(tempStack.pop())
+          nextStack.push(tempStack.pop());
         }
-        stack = nextStack
+        stack = nextStack;
       }
     }
     // drop any empty stacks at the end beyond the first one
@@ -72,9 +72,9 @@ export class StackOfStacks {
       this.stacks.length > 1 &&
       this.stacks[this.stacks.length - 1].length === 0
     ) {
-      this.stacks.pop()
+      this.stacks.pop();
     }
 
-    return value
+    return value;
   }
 }

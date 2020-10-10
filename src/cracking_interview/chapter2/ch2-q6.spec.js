@@ -1,32 +1,35 @@
-import * as helpers from './helpers'
-import * as funcs from './ch2-q6'
+import * as helpers from './helpers';
+import * as funcs from './ch2-q6';
 
 for (let key in funcs) {
-  let func = funcs[key]
+  let func = funcs[key];
 
-  describe('ch2-q6: ' + key, function() {
-    ;[
+  describe('ch2-q6: ' + key, function () {
+    [
       [1, 2, 1],
       [1, 1],
       [2, 1, 3, 3, 1, 2],
       [2, 1, 3, 8, 9, 16, 16, 9, 8, 3, 1, 2],
-      [2, 1, 3, 8, 9, 16, 11, 16, 9, 8, 3, 1, 2]
-    ].forEach(arg => {
-      it(`returns true for list ${arg}`, function() {
-        let list = helpers.arrayToLinkedList(arg)
-        expect(func(list)).toBe(true)
+      [2, 1, 3, 8, 9, 16, 11, 16, 9, 8, 3, 1, 2],
+    ].forEach((arg) => {
+      it(`returns true for list ${arg}`, function () {
+        let list = helpers.arrayToLinkedList(arg);
+        expect(func(list)).toBe(true);
         // verify list is umodified
-        expect(helpers.linkedListToArray(list)).toEqual(arg)
-      })
-    })
-
-    ;[[1, 2, 2], [2, 1], [2, 1, 5, 4, 3, 2]].forEach(arg => {
-      it(`returns false for list ${arg}`, function() {
-        let list = helpers.arrayToLinkedList(arg)
-        expect(func(list)).toBe(false)
+        expect(helpers.linkedListToArray(list)).toEqual(arg);
+      });
+    });
+    [
+      [1, 2, 2],
+      [2, 1],
+      [2, 1, 5, 4, 3, 2],
+    ].forEach((arg) => {
+      it(`returns false for list ${arg}`, function () {
+        let list = helpers.arrayToLinkedList(arg);
+        expect(func(list)).toBe(false);
         // verify list is umodified
-        expect(helpers.linkedListToArray(list)).toEqual(arg)
-      })
-    })
-  })
+        expect(helpers.linkedListToArray(list)).toEqual(arg);
+      });
+    });
+  });
 }

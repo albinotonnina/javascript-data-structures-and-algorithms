@@ -1,6 +1,6 @@
-import { displayPerfTime } from '../../../utils/perf-utils'
+import {displayPerfTime} from '../../../utils/perf-utils';
 
-import { fizzBuzz1, fizzBuzz2 } from '../fizzbuzz'
+import {fizzBuzz1, fizzBuzz2} from '../fizzbuzz';
 
 describe('Fizz-Buzz', () => {
   const vals = [
@@ -103,43 +103,43 @@ describe('Fizz-Buzz', () => {
     97,
     98,
     'Fizz',
-    'Buzz'
-  ]
+    'Buzz',
+  ];
 
   it('should pass with fizzBuzz1', () => {
-    expect(fizzBuzz1(100)).toEqual(vals)
-  })
+    expect(fizzBuzz1(100)).toEqual(vals);
+  });
 
   it('should pass with fizzBuzz2', () => {
-    expect(fizzBuzz2(100)).toEqual(vals)
-  })
+    expect(fizzBuzz2(100)).toEqual(vals);
+  });
 
   describe('Performance', () => {
     it('will display perftime, num=10', () => {
       displayPerfTime('fizzBuzz1(10)', () => {
-        fizzBuzz1(10)
-      })
+        fizzBuzz1(10);
+      });
       displayPerfTime('fizzBuzz2(10)', () => {
-        fizzBuzz2(10)
-      })
-    })
+        fizzBuzz2(10);
+      });
+    });
 
     it('will display perftime, num=100', () => {
       displayPerfTime('fizzBuzz1(100)', () => {
-        fizzBuzz1(10)
-      })
+        fizzBuzz1(10);
+      });
       displayPerfTime('fizzBuzz2(100)', () => {
-        fizzBuzz2(10)
-      })
-    })
+        fizzBuzz2(10);
+      });
+    });
 
     it('will display perftime, num=1000', () => {
       displayPerfTime('fizzBuzz1(1000)', () => {
-        fizzBuzz1(1000)
-      })
+        fizzBuzz1(1000);
+      });
       displayPerfTime('fizzBuzz2(1000)', () => {
-        fizzBuzz2(1000)
-      })
-    })
-  })
-})
+        fizzBuzz2(1000);
+      });
+    });
+  });
+});

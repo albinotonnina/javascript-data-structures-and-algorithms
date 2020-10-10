@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-import {createNode} from './helpers'
+import {createNode} from './helpers';
 
 /**
  * Walk through both lists in step summing each digit. Where the sum is greater
@@ -18,38 +18,38 @@ export function sumListsReverseOrder(list1, list2) {
     carry = 0,
     node1 = list1,
     node2 = list2,
-    sum
+    sum;
 
   while (node1 && node2) {
-    sum = node1.val + node2.val + carry
+    sum = node1.val + node2.val + carry;
     if (sum >= 10) {
-      carry = 1
-      sum -= 10
+      carry = 1;
+      sum -= 10;
     } else {
-      carry = 0
+      carry = 0;
     }
-    tail = tail.next = createNode(sum)
-    node1 = node1.next
-    node2 = node2.next
+    tail = tail.next = createNode(sum);
+    node1 = node1.next;
+    node2 = node2.next;
   }
 
-  node1 = node1 || node2 // go through whatever is remaining of the longer list
+  node1 = node1 || node2; // go through whatever is remaining of the longer list
   while (node1) {
-    sum = node1.val + carry
+    sum = node1.val + carry;
     if (sum >= 10) {
-      carry = 1
-      sum -= 10
+      carry = 1;
+      sum -= 10;
     } else {
-      carry = 0
+      carry = 0;
     }
-    tail = tail.next = createNode(sum)
-    node1 = node1.next
+    tail = tail.next = createNode(sum);
+    node1 = node1.next;
   }
 
   if (carry > 0) {
     // check for any remaining carry
-    tail.next = createNode(carry)
+    tail.next = createNode(carry);
   }
 
-  return head.next
+  return head.next;
 }

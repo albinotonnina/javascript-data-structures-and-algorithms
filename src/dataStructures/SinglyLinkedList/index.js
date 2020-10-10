@@ -1,93 +1,93 @@
 class Node {
   constructor(data) {
-    this.data = data
-    this.next = null
+    this.data = data;
+    this.next = null;
   }
 }
 
 class SinglyLinkedList {
   constructor() {
-    this.head = null
-    this.tail = null
-    this.numberOfValues = 0
+    this.head = null;
+    this.tail = null;
+    this.numberOfValues = 0;
   }
 
   add(data) {
-    const node = new Node(data)
+    const node = new Node(data);
     if (!this.head) {
-      this.head = node
-      this.tail = node
+      this.head = node;
+      this.tail = node;
     } else {
-      this.tail.next = node
-      this.tail = node
+      this.tail.next = node;
+      this.tail = node;
     }
-    this.numberOfValues++
+    this.numberOfValues++;
   }
 
   remove(data) {
-    let previous = this.head
-    let current = this.head
+    let previous = this.head;
+    let current = this.head;
 
     while (current) {
       if (current.data === data) {
         if (current === this.head) {
-          this.head = this.head.next
+          this.head = this.head.next;
         }
         if (current === this.tail) {
-          this.tail = previous
+          this.tail = previous;
         }
-        previous.next = current.next
-        this.numberOfValues--
+        previous.next = current.next;
+        this.numberOfValues--;
       } else {
-        previous = current
+        previous = current;
       }
-      current = current.next
+      current = current.next;
     }
   }
 
   insertAfter(data, toNodeData) {
-    let current = this.head
+    let current = this.head;
 
     while (current) {
       if (current.data === toNodeData) {
-        var node = new Node(data)
+        var node = new Node(data);
         if (current === this.tail) {
-          this.tail.next = node
-          this.tail = node
+          this.tail.next = node;
+          this.tail = node;
         } else {
-          node.next = current.next
-          current.next = node
+          node.next = current.next;
+          current.next = node;
         }
-        this.numberOfValues++
+        this.numberOfValues++;
       }
-      current = current.next
+      current = current.next;
     }
   }
 
   traverse(fn) {
-    var current = this.head
+    var current = this.head;
 
     while (current) {
       if (fn) {
-        fn(current)
+        fn(current);
       }
-      current = current.next
+      current = current.next;
     }
   }
 
   length() {
-    return this.numberOfValues
+    return this.numberOfValues;
   }
 
   print() {
-    let string = ''
-    let current = this.head
+    let string = '';
+    let current = this.head;
     while (current) {
-      string += current.data + ' '
-      current = current.next
+      string += current.data + ' ';
+      current = current.next;
     }
-    return string.trim()
+    return string.trim();
   }
 }
 
-module.exports = SinglyLinkedList
+module.exports = SinglyLinkedList;

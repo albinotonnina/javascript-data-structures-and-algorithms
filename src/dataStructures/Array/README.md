@@ -12,9 +12,9 @@ They are also used to implement many other data structures.
 
 Average
 
-| Access        | Search        | Insertion  | Deletion |
-| ------------- |:-------------:| ----------:| --------:|
-| O(1) |O(n)| O(1)| O(n)|
+| Access | Search | Insertion | Deletion |
+| ------ | :----: | --------: | -------: |
+| O(1)   |  O(n)  |      O(1) |     O(n) |
 
 ### Rapresentation
 

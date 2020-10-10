@@ -6,16 +6,16 @@ import {Manager} from './Manager';
 import {Director} from './Director';
 
 /* CallHandler represents the body of the program,
- * and all calls are funneled first through it. 
+ * and all calls are funneled first through it.
  */
 
 /* We have 3 levels of employees: respondents, managers, directors. */
-const LEVELS = 3; 
+const LEVELS = 3;
 
 /* Initialize with 10 respondents, 4 managers, and 2 directors. */
 const NUM_RESPONDENTS = 10;
 
-export class CallHandler {	
+export class CallHandler {
   constructor() {
     /* List of employees, by level.
      * employeeLevels[0] = respondents
@@ -24,10 +24,10 @@ export class CallHandler {
      */
     this.employeeLevels = [];
 
-    this.callQueues = []; 
+    this.callQueues = [];
     /* queues for each call�s rank */
-    for(let i = 0; i < LEVELS; i++){
-      this.callQueues.push([]); 
+    for (let i = 0; i < LEVELS; i++) {
+      this.callQueues.push([]);
     }
 
     // Create respondents.
@@ -65,7 +65,7 @@ export class CallHandler {
   dispatchCall(callParam) {
     let call = callParam;
 
-    if(callParam instanceof Caller){
+    if (callParam instanceof Caller) {
       call = new Call(callParam);
     }
 
@@ -87,10 +87,10 @@ export class CallHandler {
     /* Check the queues, starting from the highest rank this employee can serve. */
     for (let rank = emp.getRank(); rank >= 0; rank--) {
       let que = this.callQueues[rank];
-        
+
       /* Remove the first call, if any */
       if (que.length) {
-        let call = que.shift(); 
+        let call = que.shift();
         if (call !== null) {
           emp.receiveCall(call);
           return true;

@@ -1,8 +1,6 @@
 'use strict';
 
-import {
-  BlackJackGameAutomator
-} from './BlackJackGameAutomator.js';
+import {BlackJackGameAutomator} from './BlackJackGameAutomator.js';
 
 const numHands = 5;
 

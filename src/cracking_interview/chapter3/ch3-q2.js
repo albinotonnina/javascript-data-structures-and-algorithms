@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * MinStack maintains a current stack minimum by putting an object on the stack
@@ -13,39 +13,39 @@
  */
 export class MinStack {
   constructor() {
-    this._stack = []
+    this._stack = [];
   }
 
   push(value) {
-    let min = this.min()
+    let min = this.min();
     this._stack.push({
       value: value,
-      min: Math.min(min !== undefined ? min : Number.POSITIVE_INFINITY, value)
-    })
+      min: Math.min(min !== undefined ? min : Number.POSITIVE_INFINITY, value),
+    });
   }
 
   pop() {
     if (!this.isEmpty()) {
-      let item = this._stack.pop()
-      return item.value
+      let item = this._stack.pop();
+      return item.value;
     }
   }
 
   peek() {
     if (!this.isEmpty()) {
-      let item = this._stack[this._stack.length - 1]
-      return item.value
+      let item = this._stack[this._stack.length - 1];
+      return item.value;
     }
   }
 
   min() {
     if (!this.isEmpty()) {
-      let item = this._stack[this._stack.length - 1]
-      return item.min
+      let item = this._stack[this._stack.length - 1];
+      return item.min;
     }
   }
 
   isEmpty() {
-    return this._stack.length === 0
+    return this._stack.length === 0;
   }
 }

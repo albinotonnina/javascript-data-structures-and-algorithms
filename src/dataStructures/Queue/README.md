@@ -10,9 +10,9 @@ As for the Stack data structure, a peek operation is often added to the Queue da
 
 Average
 
-| Access        | Search        | Insertion  | Deletion |
-| ------------- |:-------------:| ----------:| --------:|
-| O(n) |O(n)| O(1)| O(n)|
+| Access | Search | Insertion | Deletion |
+| ------ | :----: | --------: | -------: |
+| O(n)   |  O(n)  |      O(1) |     O(n) |
 
 ### Rapresentation
 

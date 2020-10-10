@@ -10,9 +10,9 @@ Linked Lists are among the simplest and most common data structures because it a
 
 Average
 
-| Access        | Search        | Insertion  | Deletion |
-| ------------- |:-------------:| ----------:| --------:|
-| O(n) |O(n)| O(1)| O(n1)|
+| Access | Search | Insertion | Deletion |
+| ------ | :----: | --------: | -------: |
+| O(n)   |  O(n)  |      O(1) |    O(n1) |
 
 ### Rapresentation
 

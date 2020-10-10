@@ -1,13 +1,16 @@
-export const fizzBuzz1 = num => {
+export const fizzBuzz1 = (num) => {
   return [...Array(num).keys()]
     .map((_, i) => i + 1)
-    .map(
-      i =>
-        i % 15 === 0
-          ? 'FizzBuzz'
-          : i % 3 === 0 ? 'Fizz' : i % 5 === 0 ? 'Buzz' : i
-    )
-}
+    .map((i) =>
+      i % 15 === 0
+        ? 'FizzBuzz'
+        : i % 3 === 0
+        ? 'Fizz'
+        : i % 5 === 0
+        ? 'Buzz'
+        : i
+    );
+};
 
 /*
 
@@ -24,20 +27,20 @@ now we apply FizzBuzz logic, by testing all the possible combinations in the cor
 
 */
 
-export const fizzBuzz2 = num => {
-  let fizzedBuzzedArr = []
+export const fizzBuzz2 = (num) => {
+  let fizzedBuzzedArr = [];
 
   for (let i = 1; i <= num; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
-      fizzedBuzzedArr.push('FizzBuzz')
+      fizzedBuzzedArr.push('FizzBuzz');
     } else if (i % 3 === 0) {
-      fizzedBuzzedArr.push('Fizz')
+      fizzedBuzzedArr.push('Fizz');
     } else if (i % 5 === 0) {
-      fizzedBuzzedArr.push('Buzz')
+      fizzedBuzzedArr.push('Buzz');
     } else {
-      fizzedBuzzedArr.push(i)
+      fizzedBuzzedArr.push(i);
     }
   }
 
-  return fizzedBuzzedArr
-}
+  return fizzedBuzzedArr;
+};

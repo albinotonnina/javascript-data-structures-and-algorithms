@@ -1,1 +1,1 @@
-module.exports = test => test.replace(/\.tap\.js$/, '.js')
+module.exports = (test) => test.replace(/\.tap\.js$/, '.js');

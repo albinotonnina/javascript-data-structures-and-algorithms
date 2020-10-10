@@ -4,4 +4,4 @@ A palindrome is a word, phrase, number, or other sequence of characters which re
 
 Given a string, check if it's a palindrome.
 
-[check the code](isPalindrome.js) and the [test](__tests__/isPalindrome.test.js)
+[check the code](isPalindrome.js) and the [test](isPalindrome.test.js)

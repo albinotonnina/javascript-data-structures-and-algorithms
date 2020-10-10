@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * Travel through list and maintain two lists as we travel through. One list
@@ -15,30 +15,30 @@ export function partition(list, val) {
     smallerHead,
     smallerTail,
     largerHead,
-    largerTail
+    largerTail;
 
-  smallerHead = smallerTail = largerHead = largerTail = null
+  smallerHead = smallerTail = largerHead = largerTail = null;
   while (node) {
-    let next = node.next
-    node.next = null
+    let next = node.next;
+    node.next = null;
     if (node.val >= val) {
       if (!largerTail) {
-        largerHead = largerTail = node
+        largerHead = largerTail = node;
       } else {
-        largerTail = largerTail.next = node
+        largerTail = largerTail.next = node;
       }
     } else if (node.val < val) {
       if (!smallerHead) {
-        smallerHead = smallerTail = node
+        smallerHead = smallerTail = node;
       } else {
-        smallerTail = smallerTail.next = node
+        smallerTail = smallerTail.next = node;
       }
     }
-    node = next
+    node = next;
   }
 
   if (smallerTail) {
-    smallerTail.next = largerHead
+    smallerTail.next = largerHead;
   }
-  return smallerHead || largerHead
+  return smallerHead || largerHead;
 }

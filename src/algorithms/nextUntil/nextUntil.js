@@ -2,4 +2,4 @@ class NextUntil {
   constructor(array) {}
 }
 
-export default NextUntil
+export default NextUntil;

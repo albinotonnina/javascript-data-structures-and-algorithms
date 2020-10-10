@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * Go through characters in string and set flag to indicate if there is an
@@ -14,20 +14,20 @@
  */
 export function isPalindromePermutationsSet(str) {
   if (!str) {
-    return false
+    return false;
   }
 
-  let chars = new Set()
+  let chars = new Set();
   for (let char of str) {
     if (char !== ' ') {
       // ignore spaces
       if (chars.has(char)) {
-        chars.delete(char)
+        chars.delete(char);
       } else {
-        chars.add(char)
+        chars.add(char);
       }
     }
   }
 
-  return chars.size <= 1
+  return chars.size <= 1;
 }

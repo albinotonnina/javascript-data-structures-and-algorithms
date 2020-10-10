@@ -10,9 +10,9 @@ A Stack often has a third method peek which allows to check the last pushed elem
 
 Average
 
-| Access        | Search        | Insertion  | Deletion |
-| ------------- |:-------------:| ----------:| --------:|
-| O(n) |O(n)| O(1)| O(1)|
+| Access | Search | Insertion | Deletion |
+| ------ | :----: | --------: | -------: |
+| O(n)   |  O(n)  |      O(1) |     O(1) |
 
 ### Rapresentation
 

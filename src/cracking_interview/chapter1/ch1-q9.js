@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * Duplicate the rotated string, if the substring being searched is a different
@@ -15,16 +15,16 @@
  */
 export function isRotatedSubstring(str1, str2) {
   if (!str1 || !str2) {
-    throw new Error('invalid input')
+    throw new Error('invalid input');
   }
   if (str1.length !== str2.length) {
-    return false
+    return false;
   }
-  return isSubstring(str1 + str1, str2)
+  return isSubstring(str1 + str1, str2);
 }
 
 // Implementation of isSubstring function which is defined in question
 // can only be called once
 function isSubstring(str, substr) {
-  return str.includes(substr)
+  return str.includes(substr);
 }

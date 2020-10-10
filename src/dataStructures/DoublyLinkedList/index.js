@@ -1,106 +1,106 @@
 class Node {
   constructor(data) {
-    this.data = data
-    this.previous = null
-    this.next = null
+    this.data = data;
+    this.previous = null;
+    this.next = null;
   }
 }
 
 class DoublyLinkedList {
   constructor() {
-    this.head = null
-    this.tail = null
-    this.numberOfValues = 0
+    this.head = null;
+    this.tail = null;
+    this.numberOfValues = 0;
   }
 
   add(data) {
-    const node = new Node(data)
+    const node = new Node(data);
     if (!this.head) {
-      this.head = node
-      this.tail = node
+      this.head = node;
+      this.tail = node;
     } else {
-      node.previous = this.tail
-      this.tail.next = node
-      this.tail = node
+      node.previous = this.tail;
+      this.tail.next = node;
+      this.tail = node;
     }
-    this.numberOfValues++
+    this.numberOfValues++;
   }
 
   remove(data) {
-    let current = this.head
+    let current = this.head;
     while (current) {
       if (current.data === data) {
         if (current === this.head && current === this.tail) {
-          this.head = null
-          this.tail = null
+          this.head = null;
+          this.tail = null;
         } else if (current === this.head) {
-          this.head = this.head.next
-          this.head.previous = null
+          this.head = this.head.next;
+          this.head.previous = null;
         } else if (current === this.tail) {
-          this.tail = this.tail.previous
-          this.tail.next = null
+          this.tail = this.tail.previous;
+          this.tail.next = null;
         } else {
-          current.previous.next = current.next
-          current.next.previous = current.previous
+          current.previous.next = current.next;
+          current.next.previous = current.previous;
         }
-        this.numberOfValues--
+        this.numberOfValues--;
       }
-      current = current.next
+      current = current.next;
     }
   }
 
   insertAfter(data, toNodeData) {
-    let current = this.head
+    let current = this.head;
     while (current) {
       if (current.data === toNodeData) {
-        var node = new Node(data)
+        var node = new Node(data);
         if (current === this.tail) {
-          this.add(data)
+          this.add(data);
         } else {
-          current.next.previous = node
-          node.previous = current
-          node.next = current.next
-          current.next = node
-          this.numberOfValues++
+          current.next.previous = node;
+          node.previous = current;
+          node.next = current.next;
+          current.next = node;
+          this.numberOfValues++;
         }
       }
-      current = current.next
+      current = current.next;
     }
   }
 
   traverse(fn) {
-    let current = this.head
+    let current = this.head;
     while (current) {
       if (fn) {
-        fn(current)
+        fn(current);
       }
-      current = current.next
+      current = current.next;
     }
   }
 
   traverseReverse(fn) {
-    let current = this.tail
+    let current = this.tail;
     while (current) {
       if (fn) {
-        fn(current)
+        fn(current);
       }
-      current = current.previous
+      current = current.previous;
     }
   }
 
   length() {
-    return this.numberOfValues
+    return this.numberOfValues;
   }
 
   print() {
-    let string = ''
-    let current = this.head
+    let string = '';
+    let current = this.head;
     while (current) {
-      string += current.data + ' '
-      current = current.next
+      string += current.data + ' ';
+      current = current.next;
     }
-    return string.trim()
+    return string.trim();
   }
 }
 
-module.exports = DoublyLinkedList
+module.exports = DoublyLinkedList;

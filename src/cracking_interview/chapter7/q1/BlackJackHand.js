@@ -1,6 +1,4 @@
-import {
-  Hand
-} from './Hand.js';
+import {Hand} from './Hand.js';
 
 export class BlackJackHand extends Hand {
   score() {
@@ -56,6 +54,9 @@ export class BlackJackHand extends Hand {
     }
     let first = this.cards[0];
     let second = this.cards[1];
-    return (first.isAce() && second.isFaceCard()) || (second.isAce() && first.isFaceCard());
+    return (
+      (first.isAce() && second.isFaceCard()) ||
+      (second.isAce() && first.isFaceCard())
+    );
   }
 }

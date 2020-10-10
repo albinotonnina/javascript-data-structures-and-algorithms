@@ -1,60 +1,60 @@
 class meanMedianMode {
   constructor(arr) {
-    this.arr = arr
+    this.arr = arr;
   }
 
   getMean(arr) {
-    return arr.reduce((acc, num) => acc + num) / arr.length
+    return arr.reduce((acc, num) => acc + num) / arr.length;
   }
 
   getMedian(arr) {
-    arr.sort((a, b) => a - b)
+    arr.sort((a, b) => a - b);
 
-    let median
+    let median;
 
-    const isOddLength = arr.length % 2 !== 0
+    const isOddLength = arr.length % 2 !== 0;
 
     if (isOddLength) {
-      median = arr[Math.floor(arr.length / 2)]
+      median = arr[Math.floor(arr.length / 2)];
     } else {
-      const mid1 = arr[arr.length / 2 - 1]
-      const mid2 = arr[arr.length / 2]
-      median = (mid1 + mid2) / 2
+      const mid1 = arr[arr.length / 2 - 1];
+      const mid2 = arr[arr.length / 2];
+      median = (mid1 + mid2) / 2;
     }
 
-    return median
+    return median;
   }
 
   getMode(arr) {
     const modeObj = arr.reduce((obj, num) => {
-      if (!obj[num]) obj[num] = 0
-      obj[num]++
+      if (!obj[num]) obj[num] = 0;
+      obj[num]++;
 
-      return obj
-    }, {})
+      return obj;
+    }, {});
 
-    let maxFrequency = 0
+    let maxFrequency = 0;
 
     return Object.keys(modeObj)
       .reduce((acc, num) => {
         if (modeObj[num] > maxFrequency) {
-          acc = [num]
-          maxFrequency = modeObj[num]
+          acc = [num];
+          maxFrequency = modeObj[num];
         } else if (modeObj[num] === maxFrequency) {
-          acc.push(num)
+          acc.push(num);
         }
-        return acc
+        return acc;
       }, [])
-      .filter((num, i, arr) => arr.length !== Object.keys(modeObj).length)
+      .filter((num, i, arr) => arr.length !== Object.keys(modeObj).length);
   }
 
   getMeanMedianMode() {
     return {
       mean: this.getMean(this.arr),
       median: this.getMedian(this.arr),
-      mode: this.getMode(this.arr)
-    }
+      mode: this.getMode(this.arr),
+    };
   }
 }
 
-export default meanMedianMode
+export default meanMedianMode;

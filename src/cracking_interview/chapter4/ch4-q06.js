@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * Finding the successor as a few different scenarios:
@@ -17,22 +17,22 @@
  */
 export function findSuccessor(node) {
   if (!node) {
-    throw new Error('node cannot be null')
+    throw new Error('node cannot be null');
   }
 
-  let snode
+  let snode;
   if (node.right) {
-    snode = node.right
+    snode = node.right;
     while (snode.left) {
-      snode = snode.left
+      snode = snode.left;
     }
-    return snode.val
+    return snode.val;
   } else {
     // go up until we find left path
-    snode = node
+    snode = node;
     while (snode.parent && snode !== snode.parent.left) {
-      snode = snode.parent
+      snode = snode.parent;
     }
-    return snode.parent ? snode.parent.val : undefined
+    return snode.parent ? snode.parent.val : undefined;
   }
 }

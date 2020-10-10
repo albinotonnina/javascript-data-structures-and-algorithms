@@ -1,15 +1,7 @@
-import {
-  Suit
-} from './Suit.js';
-import {
-  Deck
-} from './Deck.js';
-import {
-  BlackJackHand
-} from './BlackJackHand.js';
-import {
-  BlackJackCard
-} from './BlackJackCard.js';
+import {Suit} from './Suit.js';
+import {Deck} from './Deck.js';
+import {BlackJackHand} from './BlackJackHand.js';
+import {BlackJackCard} from './BlackJackCard.js';
 
 export class BlackJackGameAutomator {
   constructor(numPlayers) {
@@ -27,7 +19,7 @@ export class BlackJackGameAutomator {
   }
 
   dealInitial() {
-    this.hands.forEach(hand => {
+    this.hands.forEach((hand) => {
       let card1 = this.deck.dealCard();
       let card2 = this.deck.dealCard();
       if (card1 === null || card2 === null) {
@@ -66,7 +58,7 @@ export class BlackJackGameAutomator {
   }
 
   playAllHands() {
-    this.hands.forEach(hand => {
+    this.hands.forEach((hand) => {
       if (!this.playHand(hand)) {
         return false;
       }

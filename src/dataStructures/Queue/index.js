@@ -1,27 +1,27 @@
 class Queue {
   constructor() {
-    this.queue = []
+    this.queue = [];
   }
 
   enqueue(value) {
-    this.queue.push(value)
+    this.queue.push(value);
   }
 
   dequeue() {
-    return this.queue.shift()
+    return this.queue.shift();
   }
 
   peek() {
-    return this.queue[0]
+    return this.queue[0];
   }
 
   length() {
-    return this.queue.length
+    return this.queue.length;
   }
 
   print() {
-    return this.queue.join(' ')
+    return this.queue.join(' ');
   }
 }
 
-module.exports = Queue
+module.exports = Queue;

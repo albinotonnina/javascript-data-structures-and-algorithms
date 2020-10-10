@@ -62,6 +62,6 @@ export class Deck {
   }
 
   print() {
-    this.cards.forEach(card => card.print());
+    this.cards.forEach((card) => card.print());
   }
 }
