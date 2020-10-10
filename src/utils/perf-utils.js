@@ -1,5 +1,5 @@
 const {performance} = require('perf_hooks')
-import colors from 'colors'
+// import colors from 'colors'
 
 export const displayPerfTime = (testName, fn) => {
   const t0 = performance.now()

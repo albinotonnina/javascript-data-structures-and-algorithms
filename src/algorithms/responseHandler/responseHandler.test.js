@@ -1,4 +1,4 @@
-import ResponseHandler from '../responseHandler'
+import ResponseHandler from './responseHandler'
 
 describe('ResponseHandler', () => {
   let responseHandler

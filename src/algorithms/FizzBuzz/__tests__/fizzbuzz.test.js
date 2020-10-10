@@ -135,10 +135,10 @@ describe('Fizz-Buzz', () => {
 
     it('will display perftime, num=1000', () => {
       displayPerfTime('fizzBuzz1(1000)', () => {
-        fizzBuzz1(10)
+        fizzBuzz1(1000)
       })
       displayPerfTime('fizzBuzz2(1000)', () => {
-        fizzBuzz2(10)
+        fizzBuzz2(1000)
       })
     })
   })
